@@ -26,7 +26,8 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    private static final String PREFIX_PAY_URL = "http://localhost:8001";
+    // private static final String PREFIX_PAY_URL = "http://localhost:8001";
+    private static final String PREFIX_PAY_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment) {
