@@ -4,10 +4,16 @@ import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.weaver.ast.Var;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName springcloud
@@ -27,6 +33,10 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -52,8 +62,30 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/lb")
-    public String getPaymentLB()
-    {
+    public String getPaymentLB() {
         return serverPort;
+    }
+
+    /**
+     * @throws
+     * @title discovery
+     * @description 服务发现
+     * @author zcc
+     * @date 2022/6/12 14:18
+     * @return: com.atguigu.springcloud.entities.CommonResult
+     */
+    @GetMapping(value = "/payment/discovery")
+    public CommonResult discovery() {
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info(service);
+        }
+
+        List<ServiceInstance> serviceInstance = discoveryClient.getInstances("");
+        for (ServiceInstance instances : serviceInstance) {
+            log.info(instances.getInstanceId() + "\t" + instances.getInstanceId() + "\t" + instances.getPort());
+        }
+
+        return new CommonResult(200, "查询成功！", "");
     }
 }

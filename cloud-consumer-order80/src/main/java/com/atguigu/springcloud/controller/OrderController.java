@@ -35,11 +35,11 @@ public class OrderController {
     @Resource
     private DiscoveryClient discoveryClient;
 
-    @Resource
-    private LoadBalancer loadBalancer;
+    // @Resource
+    // private LoadBalancer loadBalancer;
 
     // private static final String PREFIX_PAY_URL = "http://localhost:8001";
-    private static final String PREFIX_PAY_URL = "http://CLOUD-PAYMENT-SERVICE";
+    private static final String PREFIX_PAY_URL = "http://cloud-payment-service";
 
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment) {
@@ -67,16 +67,16 @@ public class OrderController {
         return discoveryClient;
     }
 
-    @GetMapping("/consumer/payment/lb")
-    public String getPaymentLB(){
-        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-        if (instances==null&&instances.size()<=0){
-            return null;
-        }
-
-        ServiceInstance intance = loadBalancer.intance(instances);
-        URI uri = intance.getUri();
-        return restTemplate.getForObject(uri+"/payment/lb",String.class);
-
-    }
+    // @GetMapping("/consumer/payment/lb")
+    // public String getPaymentLB(){
+    //     List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+    //     if (instances==null&&instances.size()<=0){
+    //         return null;
+    //     }
+    //
+    //     // ServiceInstance intance = loadBalancer.intance(instances);
+    //     // URI uri = intance.getUri();
+    //     // return restTemplate.getForObject(uri+"/payment/lb",String.class);
+    //
+    // }
 }

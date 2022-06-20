@@ -4,6 +4,7 @@ import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
@@ -36,17 +37,19 @@ public class PaymentService {
      * @return
      */
     @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "4000")
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
     })
     public String paymentInfo_TimeOut(Integer id) {
+        // int a=10 /0;
         try {
-            // int a=10 /0;
-            TimeUnit.SECONDS.sleep(3);
+
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return "线程池:" + Thread.currentThread().getName() + "paymentInfo_TimeOut,id: " + id + "\t" + "O(∩_∩)O，耗费3秒";
     }
+
 
     public String paymentInfo_TimeOutHandler(Integer id) {
         return "/(ㄒoㄒ)/调用支付接口超时或异常：\t" + "\t当前线程池名字" + Thread.currentThread().getName();
@@ -59,6 +62,7 @@ public class PaymentService {
             @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),
     })
+    @GetMapping("/payment/circuit/{id}")
     public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
         if (id < 0) {
             throw new RuntimeException("******id 不能负数");
