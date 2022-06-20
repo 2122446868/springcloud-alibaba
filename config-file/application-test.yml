@@ -2,6 +2,7 @@ spring:
   application:
     name: config-center-test
     
- config:
+    
+config:
   info: 123
     
