@@ -4,5 +4,5 @@ spring:
     
     
 config:
-  info: 1234
+  info: 12345
     
