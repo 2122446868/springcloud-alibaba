@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.controller;
+package com.atguigu.springcoud.controller;
 
 import cn.hutool.core.lang.UUID;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.controller
+ * @Package com.atguigu.springcoud.controller
  * @ClassName PaymentController
  * @Author ZCC
  * @Date 2022/03/04

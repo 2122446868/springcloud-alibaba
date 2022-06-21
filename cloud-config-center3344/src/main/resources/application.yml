@@ -5,10 +5,13 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/2122446868/springcloud-alibaba.git
           search-paths:
-
-      label: master
+            - config-file
+          username: 2122446868@qq.com
+          password: zcc19981218
+          force-pull: true
+      label: main
 
 server:
   port: 3344
@@ -20,4 +23,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka/
+
 

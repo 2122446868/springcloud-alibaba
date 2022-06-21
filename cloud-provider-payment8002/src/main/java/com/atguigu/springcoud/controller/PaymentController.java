@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.controller;
+package com.atguigu.springcoud.controller;
 
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.controller
+ * @Package com.atguigu.springcoud.controller
  * @ClassName PaymentController
  * @Author ZCC
  * @Date 2022/03/01

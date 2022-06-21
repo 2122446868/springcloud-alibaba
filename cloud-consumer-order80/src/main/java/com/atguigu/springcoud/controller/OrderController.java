@@ -1,8 +1,7 @@
-package com.atguigu.springcloud.controller;
+package com.atguigu.springcoud.controller;
 
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
-import com.atguigu.springcloud.lb.LoadBalancer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -12,13 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.net.URI;
 import java.util.List;
-import java.util.function.ObjIntConsumer;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.controller
+ * @Package com.atguigu.springcoud.controller
  * @ClassName OrderController
  * @Author ZCC
  * @Date 2022/03/02

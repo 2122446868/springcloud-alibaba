@@ -1,9 +1,6 @@
-package com.atguigu.springcloud.controller;
+package com.atguigu.springcoud.controller;
 
 import com.atguigu.springcloud.service.PaymentHystrixService;
-import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.controller
+ * @Package com.atguigu.springcoud.controller
  * @ClassName OrderHystirxController
  * @Author ZCC
  * @Date 2022/03/07

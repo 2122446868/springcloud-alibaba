@@ -1,0 +1,30 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client
+
+  cloud:
+    config:
+      label: main
+      name: application
+      profile: test
+      uri: http://localhost:3344
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+
+
+
+#暴露监控点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
