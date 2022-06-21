@@ -1,25 +1,20 @@
+server:
+  port: 3366
 spring:
   application:
-    name: config-center
+    name: config-client
+
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/2122446868/springcloud-alibaba.git
-          search-paths:
-            - config-file
-          username: 2122446868@qq.com
-          password: zcc19981218
-          force-pull: true
       label: main
+      name: application
+      profile: test
+      uri: http://localhost:3344
   rabbitmq:
     host: 192.168.31.128
     port: 5672
     username: guest
     password: guest
-
-server:
-  port: 3344
 
 
 eureka:
@@ -29,8 +24,14 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka/
 
+
+
+
+#暴露监控点
 management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: "*"
+
+

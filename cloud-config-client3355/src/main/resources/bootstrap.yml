@@ -10,6 +10,11 @@ spring:
       name: application
       profile: test
       uri: http://localhost:3344
+  rabbitmq:
+    host: 192.168.31.128
+    port: 5672
+    username: guest
+    password: guest
 
 
 eureka:
@@ -28,3 +33,5 @@ management:
     web:
       exposure:
         include: "*"
+
+

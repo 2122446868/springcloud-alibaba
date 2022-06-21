@@ -13,6 +13,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @Description TODO
  * @Version 1.0
  */
+
 @EnableConfigServer
 @SpringBootApplication
 public class ConfigCenterMain3344 {
