@@ -1,4 +1,4 @@
 spring:
   application:
-    name: config-center-dev
+    name: com.atguigu.springcloud.config-center-dev
 

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-center-test
+    name: com.atguigu.springcloud.config-center-test
     
     
 config:

@@ -7,17 +7,16 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.com.atguigu.springcloud.config
- * @ClassName ApplicationContextConfig
+ * @Package com.atguigu.springcloud.config
+ * @ClassName ApplicationContextBean
  * @Author ZCC
- * @Date 2022/03/02
+ * @Date 2022/06/21
  * @Description TODO
  * @Version 1.0
  */
 @Configuration
-public class ApplicationContextConfig {
-
-    // @LoadBalanced //使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
+public class ApplicationContextBean {
+    @LoadBalanced
     @Bean
     public RestTemplate getRestTemplate(){
         return  new RestTemplate();

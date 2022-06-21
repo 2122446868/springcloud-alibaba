@@ -2,7 +2,7 @@ server:
   port: 3355
 spring:
   application:
-    name: config-client
+    name: com.atguigu.springcloud.config-client
 
   cloud:
     config:

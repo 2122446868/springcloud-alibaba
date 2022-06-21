@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class TestController {
 
-    @Value("${config.info}")
+    @Value("${com.atguigu.springcloud.config.info}")
     private String value;
 
     @GetMapping("/getValue")

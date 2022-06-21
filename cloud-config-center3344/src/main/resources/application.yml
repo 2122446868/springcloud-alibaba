@@ -1,13 +1,13 @@
 spring:
   application:
-    name: config-center
+    name: com.atguigu.springcloud.config-center
   cloud:
     config:
       server:
         git:
           uri: https://github.com/2122446868/springcloud-alibaba.git
           search-paths:
-            - config-file
+            - com.atguigu.springcloud.config-file
           username: 2122446868@qq.com
           password: zcc19981218
           force-pull: true

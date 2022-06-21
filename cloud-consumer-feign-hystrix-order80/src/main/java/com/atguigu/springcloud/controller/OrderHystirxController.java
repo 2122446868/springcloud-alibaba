@@ -1,4 +1,4 @@
-package com.atguigu.springcoud.controller;
+package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.service.PaymentHystrixService;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +39,14 @@ public class OrderHystirxController {
     // @HystrixCommand //加了@DefaultProperties属性注解，并且没有写具体方法名字，就用统一全局的
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
         // int a = 10 / 0;
-        String result = paymentHystrixService.paymentInfo_TimeOut(id);
+        String result = null;
+        try {
+             result = paymentHystrixService.paymentInfo_TimeOut(id);
+
+        }catch (Exception e){
+            log.info("報錯了");
+
+        }
 
         return result;
     }

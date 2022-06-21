@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.config
+ * @Package com.atguigu.com.atguigu.springcloud.config
  * @ClassName MyLogGateWayFilter
  * @Author ZCC
  * @Date 2022/03/16

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ProjectName springcloud
- * @Package com.atguigu.springcloud.config
+ * @Package com.atguigu.com.atguigu.springcloud.config
  * @ClassName FeignConfig
  * @Author ZCC
  * @Date 2022/06/16
